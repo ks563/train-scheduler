@@ -9,3 +9,8 @@ var config = {
 firebase.initializeApp(config);
   
 var database = firebase.database();
+
+var trainName;
+var destination;
+var initialTrain;
+var trainFrequency;
