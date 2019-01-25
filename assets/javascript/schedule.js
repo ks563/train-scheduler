@@ -40,12 +40,14 @@ $("#add-train-btn").on("click", function () {
 
 });
 
-database.ref().("child_added", function (snap) {
+database.ref().on("child_added", function (snap) {
   var trnName = snap.val().name;
   var trnDest = snap.val().destination;
   var trnDepart = snap.val().initial;
   var trnFreq = snap.val().frequency;
-})
-// var trainDisplay = $("$<tr>").appendt()
+
+  
+});
+// var trainDisplay = $("$<tr>").append()
 
 //minutes till next arrival current time * frequency
