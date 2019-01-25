@@ -10,23 +10,28 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+var trainName ="";
+var trainDest ="";
+var initialTrain= 0;
+var trainFrequency =0;
+
 $("#add-train-btn").on("click", function () {
   event.preventDefault();
 
-  var trainName = $("#train-name-input").val().trim();
-  var trainDest = $("#destination-input").val().trim();
-  var initialTrain = moment($("#depature-input").val().trim()).format(H);
-  var trainFrequency = $("#frequency-input").val().trim();
+  trainName = $("#train-name-input").val().trim();
+  trainDest = $("#destination-input").val().trim();
+  initialTrain = moment($("#depature-input").val().trim()).format(H);
+  trainFrequency = $("#frequency-input").val().trim();
 
 
-  var trainData = {
+  // var trainData = 
+
+  database.ref().push({
     name: trainName,
     destination: trainDest,
     initial: initialTrain,
     frequency: trainFrequency
-  };
-
-  database.ref().push(trainData);
+  });
 
   console.log(trainData.name);
   console.log(trainData.location);
@@ -41,10 +46,10 @@ $("#add-train-btn").on("click", function () {
 });
 
 database.ref().on("child_added", function (snap) {
-  var trnName = snap.val().name;
-  var trnDest = snap.val().destination;
-  var trnDepart = snap.val().initial;
-  var trnFreq = snap.val().frequency;
+  trainName = snap.val().name;
+  trainDest = snap.val().destination;
+  initialTrain = snap.val().initial;
+  trainFrequency = snap.val().frequency;
 
   
 });
