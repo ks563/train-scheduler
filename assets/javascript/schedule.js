@@ -14,14 +14,14 @@ $("#add-train-btn").on("click", function () {
   event.preventDefault();
 
   var trainName = $("#train-name-input").val().trim();
-  var destination = $("#destination-input").val().trim();
+  var trainDest = $("#destination-input").val().trim();
   var initialTrain = moment($("#depature-input").val().trim()).format(H);
   var trainFrequency = $("#frequency-input").val().trim();
 
 
   var trainData = {
     name: trainName,
-    location: destination,
+    destination: trainDest,
     initial: initialTrain,
     frequency: trainFrequency
   };
@@ -40,6 +40,12 @@ $("#add-train-btn").on("click", function () {
 
 });
 
-var trainDisplay = $("$<tr>").append()
+database.ref().("child_added", function (snap) {
+  var trnName = snap.val().name;
+  var trnDest = snap.val().destination;
+  var trnDepart = snap.val().initial;
+  var trnFreq = snap.val().frequency;
+})
+// var trainDisplay = $("$<tr>").appendt()
 
 //minutes till next arrival current time * frequency
