@@ -44,15 +44,23 @@ $("#add-train-btn").on("click", function () {
   $("#frequency-input").val("");
 
 });
-
+//creates firebase event for adding train information to the database and all the information to the table in the html
 database.ref().on("child_added", function (snap) {
-  trainName = snap.val().name;
-  trainDest = snap.val().destination;
-  initialTrain = snap.val().initial;
-  trainFrequency = snap.val().frequency;
+  var trnName = snap.val().name;
+ var trnDest = snap.val().destination;
+  var initialTrn = snap.val().initial;
+  var trnFrequency = snap.val().frequency;
 
-  
+  //creates new row of train information
+  var trainRow = $("$<tr>").append(
+    $("#<td>").text(trnName),
+    $("#<td>").text(trnDest),
+    $("#<td>").text(initialTrn),
+    $("#<td>").text(trnFrequency),
+  );
+    //appends new row to the table
+  $("#train-table > body").append(trainRow);
 });
-// var trainDisplay = $("$<tr>").append()
+// 
 
 //minutes till next arrival current time * frequency
