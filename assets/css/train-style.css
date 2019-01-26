@@ -5,17 +5,34 @@ body {
   }
 
 .jumbotron {
-    background-color: #000099;
+    background: none;
     margin: auto;
     width: 75%;
-    opacity: .75;
+    /* opacity: .5; */
+    font-weight: 800;
     font-size: 2 em;
-    font-weight: bolder;
-    color:lightgray;
+    color:#000099;
+}
+
+.card{
+    border: solid;
+    border-color: #000099;
 }
 
 .card-header {
     font-weight: bolder;
+}
+
+form {
+    border: solid;
+    border-color: #000099;
+    padding: 2.4%;
+    padding-bottom:5%;
+    background-color: white;
+}
+h3{
+    border-bottom: solid;
+    border-color: lightgray;
 }
 
 label {
