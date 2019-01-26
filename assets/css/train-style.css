@@ -1,0 +1,30 @@
+body {
+    background-image: url("../images/mooning.png");
+    background-repeat: repeat;
+    font-family: 'Raleway', sans-serif;
+  }
+
+.jumbotron {
+    background-color: #000099;
+    margin: auto;
+    width: 75%;
+    opacity: .75;
+    font-size: 2 em;
+    font-weight: bolder;
+    color:lightgray;
+}
+
+.card-header {
+    font-weight: bolder;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+
+#add-train-btn{
+    background-color: #000099;
+    border-color: #000099;
+}
