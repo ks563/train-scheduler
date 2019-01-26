@@ -5,12 +5,11 @@ body {
   }
 
 .jumbotron {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder; /* this font-weight is applying - not sure why  */
     background: none;
     margin: auto;
     width: 75%;
-    /* opacity: .5; */
-    font-weight: 800;
-    font-size: 2 em;
     color:#000099;
 }
 
@@ -20,7 +19,13 @@ body {
 }
 
 .card-header {
-    font-weight: bolder;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+.table-head {
+    font-weight:bold;
 }
 
 form {
@@ -33,6 +38,7 @@ form {
 h3{
     border-bottom: solid;
     border-color: lightgray;
+    font-weight: bold;
 }
 
 label {
