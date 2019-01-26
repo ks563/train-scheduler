@@ -2,9 +2,7 @@ var config = {
   apiKey: "AIzaSyCYV-CRYXayHLEX2xF76YGG9iLQeZvKPhs",
   authDomain: "train-scheduler-ks.firebaseapp.com",
   databaseURL: "https://train-scheduler-ks.firebaseio.com",
-  projectId: "train-scheduler-ks",
   storageBucket: "train-scheduler-ks.appspot.com",
-  messagingSenderId: "625011446425"
 };
 firebase.initializeApp(config);
 
@@ -21,7 +19,7 @@ $("#add-train-btn").on("click", function () {
   //takes train info from form
   trainName = $("#train-name-input").val().trim();
   trainDest = $("#destination-input").val().trim();
-  initialTrain = moment($("#depature-input").val());
+  initialTrain = moment($("#depature-input").val()).format("H");
   trainFrequency = $("#frequency-input").val().trim();
 
   //holds data in a temp object
@@ -50,15 +48,15 @@ database.ref().on("child_added", function (childSnap) {
   var trnFrequency = childSnap.val().frequency;
 
   //creates new row of train information
-  var trainRow = $("$<tr>").append(
-    $("#<td>").text(trnName),
-    $("#<td>").text(trnDest),
-    $("#<td>").text(initialTrn),
-    $("#<td>").text(trnFrequency),
+  var trainRow = $("<tr>").append(
+    $("<td>").text(trnName),
+    $("<td>").text(trnDest),
+    $("<td>").text(initialTrn),
+    $("<td>").text(trnFrequency),
   );
-  
+
   //appends new row to the table
-  $("#train-table > body").append(trainRow);
+  $("#train-table > tbody").append(trainRow);
 });
 //
 
