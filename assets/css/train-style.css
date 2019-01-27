@@ -6,16 +6,27 @@ body {
 
 .jumbotron {
     font-family: 'Raleway', sans-serif;
-    font-weight: bolder; /* this font-weight is applying - not sure why  */
-    background: none;
+    background: white;
     margin: auto;
-    width: 75%;
-    color:#000099;
+    width: 60%;
+    border: solid;
+}
+.jumbo-text{
+    font-weight: bold;
+    font-size: 4em;
+}
+
+.jumbo-para{
+    font-size: 3em;
+}
+
+.container{
+    padding-top: 2.5%;
 }
 
 .card{
     border: solid;
-    border-color: #000099;
+    border-color: 5F5F5F;
 }
 
 .card-header {
@@ -30,7 +41,7 @@ body {
 
 form {
     border: solid;
-    border-color: #000099;
+    border-color: 5F5F5F;
     padding: 2.4%;
     padding-bottom:5%;
     background-color: white;
