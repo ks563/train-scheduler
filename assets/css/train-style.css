@@ -62,3 +62,20 @@ label {
     background-color: #000099;
     border-color: #000099;
 }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .jumbo-text{
+        font-weight: bold;
+        font-size: 2em;
+    }
+    
+    .jumbo-para{
+        font-size: 1em;
+    }
+
+    form{
+        padding-bottom: 10%;
+    }
+
+}
