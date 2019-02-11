@@ -19,7 +19,8 @@ $("#add-train-btn").on("click", function () {
   //takes train info from form
   trainName = $("#train-name-input").val().trim();
   trainDest = $("#destination-input").val().trim();
-  initialTrain = moment($("#depature-input").val()).format("H");
+  //code currently only takes in current time not inputted time
+  initialTrain = moment($("#depature-input").val()).format("HH");
   trainFrequency = $("#frequency-input").val().trim();
 
   //holds data in a temp object
